@@ -1,7 +1,8 @@
 version: '3.2'
 services:
   jenkins:
-    image: jenkins/jenkins:lts
+    #image: jenkins/jenkins:lts
+    image: jenkins_gmc:latest
     privileged: true
     user: root
     ports:
@@ -11,4 +12,5 @@ services:
     volumes:
       - /tmp/jenkins:/var/jenkins_home #Remember that, the tmp directory is designed to be wiped on system reboot.
       - /var/run/docker.sock:/var/run/docker.sock
-      - /usr/local/bin/docker:/usr/local/bin/docker
+      #- /usr/local/bin/docker:/usr/local/bin/docker
+      - /usr/bin/docker:/usr/bin/docker
